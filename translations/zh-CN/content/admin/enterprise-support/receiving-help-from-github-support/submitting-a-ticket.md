@@ -1,65 +1,76 @@
 ---
-title: 提交事件单
-intro: '您可以使用 {% if enterpriseServerVersions contains currentVersion %}{% data variables.product.prodname_ghe_server %} {% data variables.enterprise.management_console %} 或{% endif %}支持门户提交支持单。'
+title: Submitting a ticket
+intro: 'You can submit a support ticket using {% ifversion ghes %}{% data variables.product.prodname_ghe_server %} {% data variables.enterprise.management_console %} or the support portal{% elsif ghae %}{% data variables.contact.ae_azure_portal %}{% endif %}.'
 redirect_from:
   - /enterprise/admin/enterprise-support/submitting-a-ticket
   - /admin/enterprise-support/submitting-a-ticket
 versions:
-  enterprise-server: '*'
-  github-ae: '*'
+  ghes: '*'
+  ghae: '*'
 type: how_to
 topics:
   - Enterprise
   - Support
 ---
-### 关于提交事件单
+## About submitting a ticket
 
-在提交事件单之前，您应当收集 {% data variables.contact.github_support %} 的有用信息并选择联系人。 更多信息请参阅“[准备提交事件单](/enterprise/admin/guides/enterprise-support/preparing-to-submit-a-ticket)”。
+{% ifversion ghae %}
 
-{% if enterpriseServerVersions contains currentVersion %}
-在提交支持请求和可选诊断信息后，
-{% data variables.contact.github_support %} 可能要求您下载并与我们分享支持包。 更多信息请参阅“[将数据提供给 {% data variables.contact.github_support %}](/enterprise/admin/guides/enterprise-support/providing-data-to-github-support)”。
+You can submit a ticket for support with {% data variables.product.prodname_ghe_managed %} from the {% data variables.contact.ae_azure_portal %}.
 
-### 使用 {% data variables.contact.enterprise_portal %} 提交事件单
+{% endif %}
 
-1. 导航到 {% data variables.contact.contact_enterprise_portal %}。
-5. 单击 **Submit a Ticket（提交事件单）** ![将事件单提交至 Enterprise 支持团队](/assets/images/enterprise/support/submit-ticket-button.png)
-{% data reusables.enterprise_enterprise_support.submit-support-ticket-first-section %}
-{% data reusables.enterprise_enterprise_support.submit-support-ticket-second-section %}
+Before submitting a ticket, you should gather helpful information for {% data variables.contact.github_support %} and choose a contact person. For more information, see "[Preparing to submit a ticket](/enterprise/admin/guides/enterprise-support/preparing-to-submit-a-ticket)."
 
-### 使用企业帐户提交事件单
+{% ifversion ghes %}
+After submitting your support request and optional diagnostic information, {% data variables.contact.github_support %} may ask you to download and share a support bundle with us. For more information, see "[Providing data to {% data variables.contact.github_support %}](/enterprise/admin/guides/enterprise-support/providing-data-to-github-support)."
 
-{% data reusables.enterprise-accounts.access-enterprise-on-dotcom %}
-{% data reusables.enterprise-accounts.settings-tab %}
-3. 在左侧边栏中，单击 **Enterprise licensing（企业许可）**。 ![企业帐户设置侧边栏中的"Enterprise licensing（企业许可）"选项卡](/assets/images/help/enterprises/enterprise-licensing-tab.png)
-4. 在“{% data variables.product.prodname_enterprise %} 帮助”下，单击 **{% data variables.contact.enterprise_support %} Portal（门户）**。 ![导航至 Enterprise 支持站点的链接](/assets/images/enterprise/support/enterprise-support-link.png)
-5. 单击 **Submit a Ticket（提交事件单）** ![将事件单提交至 Enterprise 支持团队](/assets/images/enterprise/support/submit-ticket-button.png)
-{% data reusables.enterprise_enterprise_support.submit-support-ticket-first-section %}
-{% data reusables.enterprise_enterprise_support.submit-support-ticket-second-section %}
+## Submitting a ticket using the {% data variables.contact.enterprise_portal %}
 
-### 使用 {% data variables.product.product_name %} {% data variables.enterprise.management_console %} 提交事件单。
+{% data reusables.support.zendesk-old-tickets %}
+
+To submit a ticket about {% data variables.product.product_location_enterprise %}, you must be an owner, billing manager, or member with support entitlement. For more information, see "[Managing support entitlements for your enterprise](/enterprise-cloud@latest/admin/user-management/managing-users-in-your-enterprise/managing-support-entitlements-for-your-enterprise)."
+
+If you cannot sign in to your account on {% data variables.product.prodname_dotcom_the_website %} or do not have support entitlement, you can still submit a ticket by providing your license or a diagnostics file from your server.
+
+1. Navigate to the {% data variables.contact.contact_support_portal %}.
+{% data reusables.support.submit-a-ticket %}
+
+## Submitting a ticket using the {% data variables.product.product_name %} {% data variables.enterprise.management_console %}
 
 {% data reusables.enterprise_site_admin_settings.access-settings %}
 {% data reusables.enterprise_site_admin_settings.management-console %}
 {% data reusables.enterprise_management_console.type-management-console-password %}
 {% data reusables.enterprise_management_console.support-link %}
-5. 如果您希望在支持事件单中包含诊断，请在“Diagnostics”下单击 **Download diagnostic info** 并将文件保存到本地。 您稍后可将此文件附加到您的支持事件单。 ![用于下载诊断信息的按钮](/assets/images/enterprise/support/download-diagnostics-info-button.png)
-6. 在“Open Support Request”下，单击 **New support request**。 ![用于打开支持请求的按钮](/assets/images/enterprise/management-console/open-support-request.png)
-5. 单击 **Submit a Ticket（提交事件单）** ![将事件单提交至 Enterprise 支持团队](/assets/images/enterprise/support/submit-ticket-button.png)
-{% data reusables.enterprise_enterprise_support.submit-support-ticket-first-section %}
-14. 要在您的支持事件单中包含诊断信息，单击 **Add file**，然后附加您下载的诊断文件。 ![添加文件按钮](/assets/images/enterprise/support/support-ticket-add-file.png)
-{% data reusables.enterprise_enterprise_support.submit-support-ticket-second-section %}
-7. 单击 **Submit（提交）**。
-
-{% endif %}
-{% if currentVersion == "github-ae@latest" %}
-### 使用 {% data variables.contact.ae_azure_portal %}提交事件单
-
-商业客户可以在 {% data variables.contact.contact_ae_portal %} 中提交支持请求。 政府客户应该使用[政府客户的 Azure 门户网站](https://portal.azure.us/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)。 更多信息请参阅 Microsoft 文档中的 "[创建 Azure 支持请求](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)"。
+5. If you'd like to include diagnostics with your support ticket, Under "Diagnostics", click **Download diagnostic info** and save the file locally. You'll attach this file to your support ticket later.
+  ![Button to download diagnostics info](/assets/images/enterprise/support/download-diagnostics-info-button.png)
+6. To complete your ticket and display the {% data variables.contact.enterprise_portal %}, under "Open Support Request", click **New support request**.
+  ![Button to open a support request](/assets/images/enterprise/management-console/open-support-request.png)
+{% data reusables.support.submit-a-ticket %}
 
 {% endif %}
 
-### 延伸阅读
+{% ifversion ghae %}
 
-- "[关于 {% data variables.contact.enterprise_support %}](/enterprise/admin/guides/enterprise-support/about-github-enterprise-support)"{% if enterpriseServerVersions contains currentVersion %}
-- "[关于 {% data variables.contact.premium_support %} for {% data variables.product.prodname_ghe_server %}](/enterprise/admin/guides/enterprise-support/about-github-premium-support-for-github-enterprise-server)."{% endif %}
+## Prerequisites
+
+To submit a ticket for {% data variables.product.prodname_ghe_managed %} in the {% data variables.contact.ae_azure_portal %}, you must provide the ID for your {% data variables.product.prodname_ghe_managed %} subscription in Azure to your Customer Success Account Manager (CSAM) at Microsoft.
+
+## Submitting a ticket using the {% data variables.contact.ae_azure_portal %}
+
+Commercial customers can submit a support request in the {% data variables.contact.contact_ae_portal %}. Government customers should use the [Azure portal for government customers](https://portal.azure.us/#blade/Microsoft_Azure_Support/HelpAndSupportBlade). For more information, see [Create an Azure support request](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) in the Microsoft Docs.
+
+## Troubleshooting problems in the {% data variables.contact.ae_azure_portal %}
+
+{% data variables.product.company_short %} is unable to troubleshoot access and subscription issues in the Azure portal. For help with the Azure portal, contact your CSAM at Microsoft or review the following information.
+
+- If you cannot sign into the Azure portal, see [Troubleshoot Azure subscription sign-in issues](https://docs.microsoft.com/en-US/azure/cost-management-billing/manage/troubleshoot-sign-in-issue) in the Microsoft Docs or [submit a request directly](https://support.microsoft.com/en-us/supportrequestform/84faec50-2cbc-9b8a-6dc1-9dc40bf69178).
+
+- If you can sign into the Azure portal but you cannot submit a ticket for {% data variables.product.prodname_ghe_managed %}, review the prerequisites for submitting a ticket. For more information, see "[Prerequisites](#prerequisites)".
+
+{% endif %}
+
+## Further reading
+
+- "[About {% data variables.contact.enterprise_support %}](/enterprise/admin/guides/enterprise-support/about-github-enterprise-support)"{% ifversion ghes %}
+- "[About {% data variables.contact.premium_support %} for {% data variables.product.prodname_ghe_server %}](/enterprise/admin/guides/enterprise-support/about-github-premium-support-for-github-enterprise-server)."{% endif %}

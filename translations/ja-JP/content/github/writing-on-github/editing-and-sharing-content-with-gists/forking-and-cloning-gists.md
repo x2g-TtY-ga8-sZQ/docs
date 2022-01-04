@@ -1,32 +1,34 @@
 ---
-title: Gistのフォークとクローン
-intro: Gists は Git リポジトリです。つまり、オリジナルの作者でなくても Gist をフォークしたりクローンしたりできます。 diff など、Gist の完全なコミット履歴を見ることもできます。
+title: Forking and cloning gists
+intro: 'Gists are actually Git repositories, which means that you can fork or clone any gist, even if you aren''t the original author. You can also view a gist''s full commit history, including diffs.'
+permissions: '{% data reusables.enterprise-accounts.emu-permission-gist %}'
 redirect_from:
   - /articles/forking-and-cloning-gists
   - /github/writing-on-github/forking-and-cloning-gists
 versions:
-  free-pro-team: '*'
-  enterprise-server: '*'
-  github-ae: '*'
+  fpt: '*'
+  ghes: '*'
+  ghae: '*'
+  ghec: '*'
 ---
-### Gist をフォークする
+## Forking gists
 
-各 Gist はどのフォークにアクティビティがあるのかを示すため、他のユーザによる興味深い変更を簡単に確認できます。
+Each gist indicates which forks have activity, making it easy to find interesting changes from others.
 
-![Gist フォーク](/assets/images/help/gist/gist_forks.png)
+![Gist forks](/assets/images/help/gist/gist_forks.png)
 
-### Gist をクローンする
+## Cloning gists
 
-Gist にローカルの変更を加え、ウェブにプッシュしたい場合は、Gist をクローンして Git リポジトリと同様にコミットを行えます。 詳しい情報については[リポジトリのクローン](/articles/cloning-a-repository)を参照してください。
+If you want to make local changes to a gist and push them up to the web, you can clone a gist and make commits the same as you would with any Git repository. For more information, see "[Cloning a repository](/articles/cloning-a-repository)."
 
-![Gist クローンボタン](/assets/images/help/gist/gist_clone_btn.png)
+![Gist clone button](/assets/images/help/gist/gist_clone_btn.png)
 
-### Gist のコミットの履歴を見る
+## Viewing gist commit history
 
-Gist の完全なコミットの履歴を見るには、Gist の上部にある [Revisions] タブをクリックします。
+To view a gist's full commit history, click the "Revisions" tab at the top of the gist.
 
-![Gist [revisions] タブ](/assets/images/help/gist/gist_revisions_tab.png)
+![Gist revisions tab](/assets/images/help/gist/gist_revisions_tab.png)
 
-Gist の完全なコミットの履歴が diff とともに表示されます。
+You will see a full commit history for the gist with diffs.
 
-![Gist [revisions] ページ](/assets/images/help/gist/gist_history.png)
+![Gist revisions page](/assets/images/help/gist/gist_history.png)
